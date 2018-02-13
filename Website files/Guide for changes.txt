@@ -1,0 +1,43 @@
+These are the changes you need to make in your C:\xampp\htdocs\ceeri folder.
+
+
+Firsty make sure you have a copy of all the files of your ceeri folder somewhere else.
+
+Now delete the index.php file and final.php files from ceeri folder
+
+Download these files and keep them in your ceeri folder: index.php, dateselect.php, data.php, loginform.inc.php, logoutform.inc.php, core.inc.php, backgr.css, loginform.css, file_upload.php
+
+final.php is now renamed to data.php
+index.php is now renamed to dateselect.php
+and the new index.php is the first login page.
+
+Now open your browser and go to this link: localhost/phpmyadmin
+From the left panel open 'users' database
+create a new table by clicking 'new'
+Create a new table with name 'users'
+id: int primary index AI
+username: varchar length:30
+password: varchar length:64
+
+The click on GO
+open table
+
+enter these details; 
+id=1 
+username=ceeri_pilani 
+password= 6e8a12f836a828fd3a02847da037d3c6
+
+click on GO/save
+
+Now the data is saved with a login form.
+
+Now open google chrome and visit: localhost/ceeri/index.php
+
+You will find the login form.
+enter the following details:
+username: ceeri_pilani
+password: csir@123
+
+
+
+

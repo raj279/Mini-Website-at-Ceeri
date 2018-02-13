@@ -1,0 +1,66 @@
+*************Documentation************
+
+The LAN accessible website we are looking at can be accessed by going to following address: (Host PC's ip address)/(folder)/(filename)
+
+IP address: To find your IP address: press windows + R type 'cmd' press enter. In the cmd window type 'ipconfig' press enter. IPv4 address is your IP address.
+folder: The folder inside htdocs folder (C:\xampp\htdocs) in which you keeep your main files to run.
+filename: which you want to run. By default index.php runs.
+
+****************
+We require softwares for the following process: a web browser (Google Chrome), a SQL containing software (XAMPP) and a text editor to edit code (Sublime Text)
+
+The software we are using to access our database and connect to server is XAMPP. Before doing anything we need to start XAMPP control panel and start 'Apache' and 'MySQL' module.
+
+We can access our database bu entering following URL in our browser: localhost/phpmyadmin
+***************
+
+Till now we require following files (make sure the name is also the same in your folder as mentioned below)
+
+Important files- 
+
+index.php	(Displays login form page)
+dateselect.php  (If user is logged in, displays calendar)
+data.php	(If user is logged im, displays data for selected date and the coressponding graph for it)
+file_upload.php	(Lets you upload files for any date. Does not require user to be logged in)
+graph.js	(Files for displaying graph)
+backgr.css	(gives important background to files)
+connect.php	(connects to database: 'users')
+core.inc.php	(important file)
+loginform.inc.php (contains login procedure)
+logoutform.inc.php (contains logout procedure)
+
+You won't encounter: graph.js, backgr.css, core.inc.php, loginform.inc.php, logoutform.inc.php, connect.php.
+These files run in background. You would only encounter remaining 4 important files.
+
+Apart from these there are text files created by data.php for graph formation.
+Suppose you need to display 12-07-2017 data on webpage. Then select the date 12-07-2017 in file_upload.php and click upload. It will search for 12-07-2017.txt in our folder send the data from that onto database. Now go to data.php after selecting date: 12-07-2017 for displaying data. data.php will retieve data from database, create a file named 12-07-2017js.txt that can be readed by our graph.js for graph formation.
+
+
+Supporting files-
+
+calenderstyle1.css
+calender1.js
+calender2.js
+Chart.bundle.js
+Chart.bundle.min.js
+Chart.js
+Chart.min.js
+jquery.min.js
+
+****************
+XAMPP settings needed to be changed for giving access to all LAN connections to view our data.
+
+ In the XAMPP>apache>conf>httpd.conf file
+
+Change:
+<Directory />
+	AllowOverride none
+	Require all denied
+</Directory>
+ 
+to:
+<Directory />
+	AllowOverride All
+	Options None
+	Require all granted
+</Directory>
